@@ -1,0 +1,12 @@
+<%= form_for @message , url:  message_path(@message.id) , html: { method: :patch } do |f| %>
+
+  <p>タイトル:<%= f.text_field :title %></p>
+  <p>内容:<%= f.text_field :content %></p>
+  <input type="submit" name="commit" value="更新">
+  <%= link_to "一覧画面へ" , messages_path %>
+    
+  <!-- form_for @object, html: { multipart: true }, do |f| -->
+  <!-- form_for @object, html: { class: "classname" }, do |f| -->
+
+  
+<% end %>
