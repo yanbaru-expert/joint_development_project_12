@@ -1,14 +1,32 @@
 class TasksController < ApplicationController
+
     def new 
         @task = Task.new
     end
+
+    def index 
+        @tasks = Tasks.all 
+    end
+    
+
     def create
         Task.create(task_params)
     end
+
     def show
-        @user = User.find(params[:id])
+        @task = Task.find(params[:id])
     end
-    
+
+    def edit 
+        @task = Task.find(params[:id])
+    end
+
+    def update
+        task = Task.find(@arams[:id])
+        task.update(task_params)
+    end
+        
+
 
     private 
 
