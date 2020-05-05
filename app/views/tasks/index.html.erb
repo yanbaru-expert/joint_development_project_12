@@ -1,0 +1,9 @@
+<%= link_to "投稿画面へ", new_task_path %>
+<% @task.each do |task|  %>
+<p>
+    <%= task.title %>
+    <%= task.content %>
+    <%= link_to "詳細",task_path(user.id) ,method: :show %>
+    <%= link_to "編集",edit_task_path(user.id) ,method: :get %>
+    <%= link_to "削除",task_path(user.id) ,method: :delete %>
+</p>

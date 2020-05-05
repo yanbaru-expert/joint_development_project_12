@@ -5,7 +5,10 @@ class TasksController < ApplicationController
     def create
         Task.create(task_params)
     end
-
+    def show
+        @user = User.find(params[:id])
+    end
+    
 
     private 
 
